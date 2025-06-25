@@ -68,6 +68,29 @@ function setGreetingHeadingRandomly()
 
 }
 
+/**
+ * Generates ze greeting randomly... except they're 404 and funneh.
+ */
+function setGreetingHeadingRandomly404()
+{
+
+    const heading = document.getElementById("404-text");
+    if (!heading) return;
+
+    const greetings = [
+        "The apocalypse ain't this way, bud!",
+        "The ocean is a bit rough today, sorry...",
+        "Nope, this isn't google.com...",
+        "Hello, fellow Internet user!",
+        "Welcome to the void, friend... Cozy, right?"
+    ];
+
+    const greeting = greetings[Math.floor(Math.random() * greetings.length)]; // why is random part of Math?
+                                                                                // good old JS never fails to disappoint :))
+    heading.textContent = greeting; // this greets 404
+
+}
+
 
 /*
     On Startup
@@ -75,6 +98,9 @@ function setGreetingHeadingRandomly()
 
 // Uncomment for random greeting
 document.addEventListener("DOMContentLoaded", setGreetingHeadingRandomly);
+
+// Uncomment for no 404 greeting like at all
+document.addEventListener("DOMContentLoaded", setGreetingHeadingRandomly404);
 
 // Uncomment for time-based greeting
 //document.addEventListener("DOMContentLoaded", setGreetingHeadingByTime);
